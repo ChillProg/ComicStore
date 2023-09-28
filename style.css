@@ -1,0 +1,398 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap');
+
+span {
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comic-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.comic-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: opacity 0.3s;
+    object-fit: cover;
+    background-image: url(./assets/BackGroundImage.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.grayscale {
+    filter: grayscale(100%);
+    opacity: 0.8;
+}
+
+.zoom-image {
+    transform: translate(var(--zoom-x), var(--zoom-y));
+    opacity: 0;
+    transition: opacity 0.3s;
+    position: absolute;
+    background-position: right var(--zoom-x) bottom var(--zoom-y);
+    -webkit-background-position: right var(--zoom-x) bottom var(--zoom-y);
+    animation: animate 8s ease infinite;
+}
+
+@keyframes animate {
+    0% {
+        clip-path: path('M466,291Q434,332,394.5,349.5Q355,367,333,401.5Q311,436,271,435.5Q231,435,184.5,439.5Q138,444,119,401.5Q100,359,81,324.5Q62,290,77.5,253.5Q93,217,93,176.5Q93,136,129,120Q165,104,195,56Q225,8,270,28.5Q315,49,362,61.5Q409,74,416,123.5Q423,173,460.5,211.5Q498,250,466,291Z');
+    }
+
+    20% {
+        clip-path: path('M431.5,284.5Q406,319,375.5,337Q345,355,326.5,392.5Q308,430,270,423.5Q232,417,201,403Q170,389,136,373.5Q102,358,68.5,327Q35,296,71,258Q107,220,82,165Q57,110,105,95.5Q153,81,193,86.5Q233,92,276,64.5Q319,37,327.5,95.5Q336,154,403.5,153Q471,152,464,201Q457,250,431.5,284.5Z');
+    }
+
+    40% {
+        clip-path: path('M451.5,300.5Q476,351,422,366Q368,381,341.5,416.5Q315,452,271.5,457Q228,462,196,430.5Q164,399,108.5,396Q53,393,79,337Q105,281,107.5,250.5Q110,220,89.5,169Q69,118,104.5,89Q140,60,184,48.5Q228,37,274.5,34Q321,31,368,49Q415,67,412.5,123Q410,179,418.5,214.5Q427,250,451.5,300.5Z');
+    }
+
+    60% {
+        clip-path: path('M440.5,286Q411,322,393,355.5Q375,389,341.5,408.5Q308,428,267.5,449.5Q227,471,205.5,417.5Q184,364,153.5,353Q123,342,92.5,316Q62,290,74.5,252.5Q87,215,73,163.5Q59,112,119,119Q179,126,206,109.5Q233,93,266.5,94Q300,95,325,117Q350,139,384,157Q418,175,444,212.5Q470,250,440.5,286Z');
+    }
+
+    80% {
+        clip-path: path('M431.5,284.5Q406,319,375.5,337Q345,355,326.5,392.5Q308,430,270,423.5Q232,417,201,403Q170,389,136,373.5Q102,358,68.5,327Q35,296,71,258Q107,220,82,165Q57,110,105,95.5Q153,81,193,86.5Q233,92,276,64.5Q319,37,327.5,95.5Q336,154,403.5,153Q471,152,464,201Q457,250,431.5,284.5Z');
+    }
+
+    100% {
+        clip-path: path('M466,291Q434,332,394.5,349.5Q355,367,333,401.5Q311,436,271,435.5Q231,435,184.5,439.5Q138,444,119,401.5Q100,359,81,324.5Q62,290,77.5,253.5Q93,217,93,176.5Q93,136,129,120Q165,104,195,56Q225,8,270,28.5Q315,49,362,61.5Q409,74,416,123.5Q423,173,460.5,211.5Q498,250,466,291Z');
+    }
+}
+
+.header-container {
+    position: absolute;
+    top: 25px;
+    width: calc(100% - 60px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+.left-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.about-store {
+    background-color: #ffeb35;
+    color: #222324;
+    padding: 10px 15px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    height: 22px;
+}
+
+.search-comic-container {
+    background-color: #ffeb35;
+    color: #222324;
+    padding: 10px 15px 10px 15px;
+    border-radius: 30px;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-content: center;
+    height: 22px;
+
+}
+
+.search {
+    padding-left: 5px;
+    color: #222324;
+}
+
+
+.buy-container {
+    color: white;
+    background-color: #222324;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 14px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.buy-container img {
+    margin-left: 10px;
+    height: 21px;
+}
+
+.boton-container {
+    position: absolute;
+    bottom: 30px;
+    height: 35px;
+    background-color: #ffeb35;
+    color: #222324;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: 800;
+    font-size: 15px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.book-icon {
+    color: white;
+    background-color: #222324;
+    margin: 0px 15px;
+    padding: 30px;
+    border-radius: 50%;
+    font-size: 22px !important;
+}
+
+.comic-store {
+    position: absolute;
+    color: #181818;
+    font-family: 'Comic Neue', cursive;
+    font-size: 130px;
+    letter-spacing: -3px;
+    cursor: default;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
